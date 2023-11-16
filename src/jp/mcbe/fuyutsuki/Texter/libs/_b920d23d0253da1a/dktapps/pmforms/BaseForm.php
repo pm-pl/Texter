@@ -24,7 +24,7 @@ declare(strict_types=1);
 /**
  * API for Minecraft: Bedrock custom UI (forms)
  */
-namespace jp\mcbe\fuyutsuki\Texter\libs\_1fc47c341a5ac7b4\dktapps\pmforms;
+namespace jp\mcbe\fuyutsuki\Texter\libs\_b920d23d0253da1a\dktapps\pmforms;
 
 use pocketmine\form\Form;
 
