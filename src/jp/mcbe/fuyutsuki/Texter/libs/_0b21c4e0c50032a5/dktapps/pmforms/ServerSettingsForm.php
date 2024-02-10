@@ -21,7 +21,7 @@
 
 declare(strict_types=1);
 
-namespace jp\mcbe\fuyutsuki\Texter\libs\_b920d23d0253da1a\dktapps\pmforms;
+namespace jp\mcbe\fuyutsuki\Texter\libs\_0b21c4e0c50032a5\dktapps\pmforms;
 
 /**
  * Represents a custom form which can be shown in the Settings menu on the client. This is exactly the same as a regular

@@ -21,18 +21,24 @@
 
 declare(strict_types=1);
 
-namespace jp\mcbe\fuyutsuki\Texter\libs\_b920d23d0253da1a\dktapps\pmforms\element;
+namespace jp\mcbe\fuyutsuki\Texter\libs\_0b21c4e0c50032a5\dktapps\pmforms\element;
 
-class Dropdown extends BaseSelector{
+use function assert;
+
+/**
+ * Element which displays some text on a form.
+ */
+class Label extends CustomFormElement{
 
 	public function getType() : string{
-		return "dropdown";
+		return "label";
+	}
+
+	public function validateValue($value) : void{
+		assert($value === null);
 	}
 
 	protected function serializeElementData() : array{
-		return [
-			"options" => $this->options,
-			"default" => $this->defaultOptionIndex
-		];
+		return [];
 	}
 }
