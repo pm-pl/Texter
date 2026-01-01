@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace jp\mcbe\fuyutsuki\Texter\command\form;
 
-use jp\mcbe\fuyutsuki\Texter\libs\_d7cb0e7464935b9b\dktapps\pmforms\CustomForm;
-use jp\mcbe\fuyutsuki\Texter\libs\_d7cb0e7464935b9b\dktapps\pmforms\CustomFormResponse;
-use jp\mcbe\fuyutsuki\Texter\libs\_d7cb0e7464935b9b\dktapps\pmforms\element\Input;
-use jp\mcbe\fuyutsuki\Texter\libs\_d7cb0e7464935b9b\dktapps\pmforms\element\Label;
+use jp\mcbe\fuyutsuki\Texter\libs\_205c34473f6e3987\dktapps\pmforms\CustomForm;
+use jp\mcbe\fuyutsuki\Texter\libs\_205c34473f6e3987\dktapps\pmforms\CustomFormResponse;
+use jp\mcbe\fuyutsuki\Texter\libs\_205c34473f6e3987\dktapps\pmforms\element\Input;
+use jp\mcbe\fuyutsuki\Texter\libs\_205c34473f6e3987\dktapps\pmforms\element\Label;
 use jp\mcbe\fuyutsuki\Texter\data\FloatingTextData;
 use jp\mcbe\fuyutsuki\Texter\i18n\TexterLang;
 use jp\mcbe\fuyutsuki\Texter\Main;
@@ -19,9 +19,9 @@ use Ramsey\Uuid\Uuid;
 class MoveFloatingTextToPositionForm extends CustomForm {
 
 	public function __construct(
-		private TexterLang $lang,
-		private string $name,
-		bool $isNotValid = false
+		private readonly TexterLang $lang,
+		private readonly string     $name,
+		bool                        $isNotValid = false
 	) {
 		$inputX = $lang->translateString("form.move.position.x");
 		$inputY = $lang->translateString("form.move.position.y");
@@ -75,7 +75,7 @@ class MoveFloatingTextToPositionForm extends CustomForm {
 		}
 	}
 
-	public function resend(Player $player, bool $isNotValid = false) {
+	public function resend(Player $player, bool $isNotValid = false): void {
 		$form = new self($this->lang, $this->name, $isNotValid);
 		$player->sendForm($form);
 	}
